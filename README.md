@@ -1,176 +1,103 @@
 # Sturdy-portfolio-ANKA-190
-Portfolio project for Year 1, Semester 2 of UNASAT Software Engineering
 
-**Tech Stack:** Node.js + Express + MySQL + Vanilla JavaScript  
-**Pattern:** MVC (Models, Views, Controllers)
+Simple Portfolio Website with Login and LocalStorage  
+Year 1, Semester 2 of UNASAT Software Engineering
+
+## Features
+
+✅ **Login System**
+- Guest login (view-only)
+- Creator login (with password protection)
+- Password: `creator123`
+
+✅ **Hero Section**
+- Display name, occupation, age, hobbies
+- Creator can edit directly on the page
+
+✅ **Description Section**
+- Short bio/about me text
+- Creator can edit
+
+✅ **Cards System (CRUD)**
+- Create, Read, Update, Delete cards
+- Categories: Projects, Accomplishments, Training
+- Edit mode shows edit/delete buttons
+- Creator only
+
+✅ **LocalStorage**
+- All data persists in browser
+- No database needed (yet)
 
 ## Project Structure
 
 ```
-portfolio-api/
-├── config/              # Database connection config
-│   └── db.js
-├── routes/              # API route definitions
-│   └── projectRoutes.js
-├── controllers/         # Business logic
-│   └── projectController.js
-├── models/              # Database queries
-│   └── projectModel.js
-├── middleware/          # Auth, validation, error handling
-│   └── authMiddleware.js
-├── public/              # Frontend (HTML, CSS, JS)
-│   ├── index.html
-│   ├── css/
-│   │   └── style.css
-│   └── js/
-│       └── main.js
-├── app.js               # Express app entry point
-├── package.json         # Dependencies
-├── database.sql         # Database schema & sample data
-├── .env.example         # Environment variables template
-├── .gitignore
+portfolio/
+├── index.html       # Main HTML file
+├── style.css        # Styling
+├── app.js           # JavaScript (login, CRUD, localStorage)
 └── README.md
 ```
 
-## Architecture: Request-to-Response Flow
+## How to Use
 
-```
-Browser (Vanilla JS)
-    ↓ fetch('/api/projects')
-Routes (/api/projects)
-    ↓ getProjects()
-Controllers (Business Logic)
-    ↓ Project.getAll()
-Models (SQL Queries)
-    ↓
-MySQL Database
-    ↓ returns data
-Models (format data)
-    ↓
-Controllers (build response)
-    ↓
-Routes (send JSON)
-    ↓
-Browser (render projects)
-```
+### 1. Open the Portfolio
+Simply open `index.html` in a browser.
 
-## Setup Instructions
+### 2. Login
+- **Guest**: View-only mode, no edit buttons
+- **Creator**: Enter password `creator123` to unlock edit functionality
 
-### 1. Install Dependencies
-```bash
-npm install
-```
+### 3. As Creator (Edit Mode)
+Click **"Edit"** button in header to toggle edit mode.
 
-### 2. Create Environment File
-Copy `.env.example` to `.env`:
-```bash
-cp .env.example .env
-```
+**Edit Options:**
+- Edit hero info (name, occupation, age, hobbies)
+- Edit description
+- Add new cards (Projects, Accomplishments, Training)
+- Edit existing cards
+- Delete cards
 
-Update `.env` with your MySQL credentials:
-```
-DB_HOST=localhost
-DB_USER=root
-DB_PASSWORD=your_password
-DB_NAME=portfolio_db
-PORT=3000
-```
+### 4. Data is Saved
+All changes are saved automatically to browser's LocalStorage.
 
-### 3. Set Up Database
-Run the SQL schema:
-```bash
-mysql -u root -p < database.sql
-```
+## Data Storage
 
-Or manually:
-```sql
-mysql> CREATE DATABASE portfolio_db;
-mysql> USE portfolio_db;
-mysql> [paste contents of database.sql]
-```
+- **Location**: Browser LocalStorage (key: `portfolioData`)
+- **Format**: JSON
+- **Persistence**: Data remains until browser cache is cleared
+- **Future**: Can be migrated to backend database
 
-### 4. Start the Server
+## Default Data
 
-**Development (with auto-reload):**
-```bash
-npm run dev
-```
+### Hero
+- Name: John Doe
+- Occupation: Full Stack Developer
+- Age: 24
+- Hobbies: Coding, Gaming, Reading
 
-**Production:**
-```bash
-npm start
-```
+### Description
+"Welcome to my portfolio! I'm a passionate developer interested in creating beautiful and functional web applications."
 
-Server runs on `http://localhost:3000`
+### Sample Cards
+1. Portfolio Website (Project)
+2. Year 1 Completion (Accomplishment)
+3. Web Development Bootcamp (Training)
 
-## API Endpoints
+## Customization
 
-### Projects (Fully Implemented)
-- `GET /api/projects` — Get all projects
-- `GET /api/projects/:id` — Get single project
-- `POST /api/projects` — Create project
-- `PUT /api/projects/:id` — Update project
-- `DELETE /api/projects/:id` — Delete project
+Edit `app.js` and modify the `getPortfolioData()` function to change default values.
 
-### Messages (To Be Implemented)
-- `POST /api/messages` — Submit contact form
+## Future Enhancements
 
-## Current Status
+- [ ] Backend API integration (Node.js + Express + MySQL)
+- [ ] Database persistence
+- [ ] Email notifications
+- [ ] Admin dashboard
+- [ ] Multiple user support
+- [ ] Portfolio sections (skills, experience, etc.)
 
-✅ **Complete:**
-- Project structure & folder organization
-- Database schema with sample data
-- Projects CRUD endpoints
-- Frontend HTML/CSS/JS
-- API client (fetch in JavaScript)
+## Notes
 
-⏳ **In Progress:**
-- Messages API endpoint
-- Authentication/Authorization
-- Input validation middleware
-
-❌ **Not Started:**
-- Admin dashboard
-- JWT tokens
-- Email notifications
-- Deployment
-
-## Testing Endpoints
-
-### Using Fetch (in browser console)
-```javascript
-// Get all projects
-fetch('/api/projects').then(r => r.json()).then(d => console.log(d))
-
-// Create project
-fetch('/api/projects', {
-  method: 'POST',
-  headers: {'Content-Type': 'application/json'},
-  body: JSON.stringify({
-    title: 'Test',
-    description: 'Test project'
-  })
-}).then(r => r.json()).then(d => console.log(d))
-```
-
-### Using Thunder Client or Postman
-- Base URL: `http://localhost:3000`
-- Test each endpoint manually
-
-## Learning Outcomes
-
-This project teaches:
-- **REST API design** — RESTful endpoints, HTTP methods
-- **MVC architecture** — Separation of concerns
-- **Database design** — Schema, relationships, queries
-- **Frontend-Backend communication** — fetch(), API contracts
-- **Middleware** — Request/response pipeline
-- **Error handling** — Proper HTTP status codes
-
-## Next Steps
-
-1. Implement `/api/messages` endpoint
-2. Build authentication middleware
-3. Add input validation
-4. Create admin dashboard
-5. Deploy to production server
+- No server needed to run locally
+- Works entirely in the browser
+- Changes persist in LocalStorage only (not shared across browsers/devices)
