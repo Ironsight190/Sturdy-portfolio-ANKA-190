@@ -1,0 +1,30 @@
+<!-- Login Page -->
+<div id="loginPage" class="page active">
+  <div class="login-container">
+    <div class="login-card">
+      <h1>My Portfolio</h1>
+      <p>Choose your role to continue</p>
+      
+      <div class="login-buttons">
+        <button class="btn btn-guest" onclick="login('guest')">Login as Guest</button>
+        <button class="btn btn-creator" onclick="login('creator')">Login as Creator</button>
+      </div>
+      
+      <div class="credentials-info">
+        <p><strong>Creator Password:</strong> creator123</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Creator Password Modal -->
+<div id="passwordModal" class="modal">
+  <div class="modal-content">
+    <h2>Creator Login</h2>
+    <input type="password" id="passwordInput" placeholder="Enter password" />
+    <div class="modal-buttons">
+      <button class="btn btn-primary" onclick="verifyPassword()">Verify</button>
+      <button class="btn btn-secondary" onclick="closePasswordModal()">Cancel</button>
+    </div>
+  </div>
+</div>

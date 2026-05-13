@@ -7,9 +7,30 @@ const STORAGE_KEY = 'portfolioData';
 const CREATOR_PASSWORD = 'creator123';
 
 // Initialize app
-document.addEventListener('DOMContentLoaded', () => {
-  loadPortfolioData();
+document.addEventListener('DOMContentLoaded', async () => {
+  await loadPage('login');
 });
+
+// ============================================
+// PAGE LOADING
+// ============================================
+
+async function loadPage(pageName) {
+  const app = document.getElementById('app');
+  
+  try {
+    const response = await fetch(`pages/${pageName}.html`);
+    const html = await response.text();
+    app.innerHTML = html;
+    
+    if (pageName === 'portfolio') {
+      loadPortfolioData();
+    }
+  } catch (error) {
+    console.error(`Error loading page: ${pageName}`, error);
+    app.innerHTML = '<p>Error loading page. Please refresh.</p>';
+  }
+}
 
 // ============================================
 // LOGIN & AUTHENTICATION
@@ -45,10 +66,9 @@ function verifyPassword() {
   }
 }
 
-function setUser(role) {
+async function setUser(role) {
   currentUser = role;
-  document.getElementById('loginPage').classList.remove('active');
-  document.getElementById('portfolioPage').classList.add('active');
+  await loadPage('portfolio');
   document.getElementById('userRole').textContent = role.charAt(0).toUpperCase() + role.slice(1);
 
   if (role === 'creator') {
@@ -58,16 +78,13 @@ function setUser(role) {
     document.getElementById('editToggle').style.display = 'none';
     document.getElementById('addCardBtn').style.display = 'none';
     isEditMode = false;
-    updateUIForEditMode();
   }
 }
 
-function logout() {
+async function logout() {
   currentUser = null;
   isEditMode = false;
-  document.getElementById('portfolioPage').classList.remove('active');
-  document.getElementById('loginPage').classList.add('active');
-  updateUIForEditMode();
+  await loadPage('login');
 }
 
 // ============================================
@@ -338,16 +355,21 @@ function loadPortfolioData() {
   loadCards();
 }
 
-// Close modals with Escape key
+// Event listeners for keyboard shortcuts
 document.addEventListener('keydown', (e) => {
+  const passwordModal = document.getElementById('passwordModal');
+  if (!passwordModal) return;
+  
   if (e.key === 'Escape') {
     closePasswordModal();
   }
 });
 
-// Handle Enter key in password modal
 document.addEventListener('keydown', (e) => {
-  if (e.key === 'Enter' && document.getElementById('passwordModal').classList.contains('active')) {
+  const passwordModal = document.getElementById('passwordModal');
+  if (!passwordModal) return;
+  
+  if (e.key === 'Enter' && passwordModal.classList.contains('active')) {
     verifyPassword();
   }
 });
