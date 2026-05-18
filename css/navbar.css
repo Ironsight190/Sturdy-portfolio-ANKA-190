@@ -22,7 +22,15 @@
   background-color: transparent;
   transition:
     background-color 0.3s ease,
-    padding 0.3s ease;
+    padding 0.3s ease,
+    transform 0.3s ease,
+    opacity 0.3s ease;
+}
+
+.navbar.hidden {
+  transform: translateY(-120%);
+  opacity: 0;
+  pointer-events: none;
 }
 
 .navbar.scrolled {
@@ -91,13 +99,16 @@
   flex-direction: column;
   gap: 5px;
   cursor: pointer;
+  background: transparent;
+  border: none;
+  padding: 0;
 }
 
 .hamburger span {
   width: 25px;
   height: 2px;
-  background-color: var(--text-primary);
-  transition: all 0.3s ease;
+  background-color: var(--accent);
+  transition: all 0.5s ease;
 }
 
 /* MOBILE NAV */
@@ -122,4 +133,8 @@
   .nav-links.open {
     display: flex;
   }
+}
+
+@media (min-width: 769px) {
+  /* removed body padding to avoid layout jump when navbar visibility toggles */
 }

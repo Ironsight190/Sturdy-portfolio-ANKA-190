@@ -7,6 +7,10 @@
   --font-main: "Inter", sans-serif;
 }
 
+html {
+  background-color: #1a1a2e; /* Replace with your site's actual background color */
+}
+
 * {
   margin: 0;
   padding: 0;

@@ -22,5 +22,18 @@ async function loadNavbar() {
       link.addEventListener('click', () => navLinks.classList.remove('open'));
     });
   }
+
+  const navbar = placeholder.querySelector('.navbar');
+  const updateNavbarVisibility = () => {
+    if (!navbar) return;
+    if (window.scrollY === 0) {
+      navbar.classList.remove('hidden');
+    } else {
+      navbar.classList.add('hidden');
+    }
+  };
+
+  updateNavbarVisibility();
+  window.addEventListener('scroll', updateNavbarVisibility);
 }
 loadNavbar();

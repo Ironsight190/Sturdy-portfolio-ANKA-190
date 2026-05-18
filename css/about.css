@@ -47,8 +47,8 @@
 
 .about-intro-image {
   flex-shrink: 0;
-  width: 800px;
-  height: 700px;
+  width: 600px;
+  height: 400px;
   border-radius: 12px;
   overflow: hidden;
   background-color: var(--bg-secondary);
