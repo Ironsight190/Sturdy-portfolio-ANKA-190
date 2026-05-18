@@ -10,178 +10,26 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/navbar.css" />
     <link rel="stylesheet" href="./css/work.css" />
   </head>
   <body>
     <div class="page-bucket">
       <div id="navbar-placeholder"></div>
 
-      <!-- Portfolio Page -->
-      <div id="portfolioPage" class="page">
-        <!-- Header with Logout -->
-        <header class="header">
-          <div class="header-content">
-            <h1>Work</h1>
-            <div class="header-actions">
-              <span id="userRole" class="user-role">Guest</span>
-              <button
-                id="editToggle"
-                class="btn btn-edit"
-                onclick="toggleEditMode()"
-                style="display: none"
-              >
-                Edit
-              </button>
-              <button class="btn btn-logout" onclick="logout()">Logout</button>
-            </div>
-          </div>
-        </header>
-
-        <main class="container">
-          <!-- Hero Section -->
-          <section class="hero">
-            <div id="heroView" class="hero-content">
-              <div class="hero-info">
-                <h2 id="heroName" class="hero-name">John Doe</h2>
-                <p id="heroOccupation" class="hero-occupation">
-                  Full Stack Developer
-                </p>
-
-                <div class="hero-details" id="heroDetails">
-                  <div class="detail">
-                    <span class="label">Age:</span>
-                    <span id="heroAge" class="value">24</span>
-                  </div>
-                  <div class="detail">
-                    <span class="label">Hobbies:</span>
-                    <span id="heroHobbies" class="value"
-                      >Coding, Gaming, Reading</span
-                    >
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- Edit Hero Section (Creator Only) -->
-            <div id="heroEdit" class="hero-edit" style="display: none">
-              <h3>Edit Hero Section</h3>
-              <div class="form-group">
-                <label>Name:</label>
-                <input type="text" id="editName" />
-              </div>
-              <div class="form-group">
-                <label>Occupation:</label>
-                <input type="text" id="editOccupation" />
-              </div>
-              <div class="form-group">
-                <label>Age:</label>
-                <input type="text" id="editAge" />
-              </div>
-              <div class="form-group">
-                <label>Hobbies:</label>
-                <input type="text" id="editHobbies" />
-              </div>
-              <button class="btn btn-primary" onclick="saveHeroData()">
-                Save
-              </button>
-            </div>
-          </section>
-
-          <!-- Description Section -->
-          <section class="description-section">
-            <h2>About Me</h2>
-            <div id="descriptionView" class="description-view">
-              <p id="descriptionText">
-                Welcome to my portfolio! I'm a passionate developer interested
-                in creating beautiful and functional web applications.
-              </p>
-            </div>
-
-            <div
-              id="descriptionEdit"
-              class="description-edit"
-              style="display: none"
-            >
-              <textarea id="descriptionInput" rows="5"></textarea>
-              <button class="btn btn-primary" onclick="saveDescription()">
-                Save
-              </button>
-            </div>
-          </section>
-
           <!-- Work Cards Section -->
           <section class="cards-section">
             <p class="section-label">— Selected Work</p>
             <h2>Featured Projects</h2>
 
-            <div class="work-cards">
-              <article class="work-card">
-                <div class="work-card-image">
-                  <img src="./img/project-01.png" alt="Brand refresh preview" />
-                </div>
-                <div class="work-card-content">
-                  <span class="work-card-tag">Product Design</span>
-                  <h3>Brand refresh for YN Studio</h3>
-                  <p>
-                    Refined the visual system, created a polished landing page,
-                    and established a strong color contrast for a premium
-                    digital experience.
-                  </p>
-                  <div class="work-card-meta">
-                    <span>UI/UX</span>
-                    <span>Figma</span>
-                    <span>2025</span>
-                  </div>
-                </div>
-              </article>
-
-              <article class="work-card">
-                <div class="work-card-image">
-                  <img src="./img/project-02.png" alt="Dashboard concept" />
-                </div>
-                <div class="work-card-content">
-                  <span class="work-card-tag">Web App</span>
-                  <h3>Dashboard concept for creators</h3>
-                  <p>
-                    Built a clean, dark-themed dashboard layout with clear
-                    hierarchy, quick actions, and responsive card modules.
-                  </p>
-                  <div class="work-card-meta">
-                    <span>Design System</span>
-                    <span>HTML/CSS</span>
-                    <span>2025</span>
-                  </div>
-                </div>
-              </article>
-
-              <article class="work-card">
-                <div class="work-card-image">
-                  <img src="./img/project-03.png" alt="Case study preview" />
-                </div>
-                <div class="work-card-content">
-                  <span class="work-card-tag">Portfolio</span>
-                  <h3>Interactive project showcase</h3>
-                  <p>
-                    Organized case studies into modular cards with strong visual
-                    balance and a flexible left-image / right-description
-                    layout.
-                  </p>
-                  <div class="work-card-meta">
-                    <span>Creative Direction</span>
-                    <span>Responsive Design</span>
-                    <span>2025</span>
-                  </div>
-                </div>
-              </article>
-            </div>
+            <div class="work-cards" id="workCards"></div>
           </section>
-        </main>
-
         <footer class="footer">
           <p>&copy; 2024 My Portfolio. All rights reserved.</p>
         </footer>
       </div>
     </div>
     <script src="./js/navbar.js"></script>
+    <script src="./js/work.js"></script>
   </body>
 </html>
