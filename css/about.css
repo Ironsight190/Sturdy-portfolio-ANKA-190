@@ -1,0 +1,167 @@
+/* ABOUT WRAPPER */
+.about-wrapper {
+  padding: 8rem 8% 6rem;
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+}
+
+/* SHARED LABELS */
+.section-label {
+  color: var(--accent);
+  font-size: 0.85rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.about-wrapper h2 {
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 900;
+  margin-bottom: 2.5rem;
+}
+
+/* INTRO */
+.about-intro {
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+
+.about-intro-text {
+  flex: 1;
+}
+
+.about-intro-text h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  font-weight: 900;
+  margin-bottom: 1.5rem;
+}
+
+.about-bio {
+  color: var(--text-muted);
+  line-height: 1.8;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+}
+
+.about-intro-image {
+  flex-shrink: 0;
+  width: 320px;
+  height: 400px;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: var(--bg-secondary);
+}
+
+.about-intro-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* TIMELINE */
+.timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  border-left: 2px solid var(--bg-secondary);
+  padding-left: 2rem;
+}
+
+.timeline-item {
+  position: relative;
+}
+
+.timeline-dot {
+  position: absolute;
+  left: -2.45rem;
+  top: 0.4rem;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: var(--accent);
+}
+
+.timeline-date {
+  font-size: 0.8rem;
+  color: var(--accent);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.timeline-content h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin: 0.4rem 0 0.2rem;
+}
+
+.timeline-place {
+  color: var(--accent);
+  font-size: 0.9rem;
+  margin-bottom: 0.5rem;
+}
+
+.timeline-content p {
+  color: var(--text-muted);
+  line-height: 1.7;
+  font-size: 0.95rem;
+}
+
+/* INTERESTS */
+.interests-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+}
+
+.interest-card {
+  background-color: var(--bg-secondary);
+  border-radius: 12px;
+  padding: 2rem 1.5rem;
+  transition: transform 0.2s ease;
+}
+
+.interest-card:hover {
+  transform: translateY(-4px);
+}
+
+.interest-icon {
+  font-size: 2rem;
+  display: block;
+  margin-bottom: 1rem;
+}
+
+.interest-card h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.interest-card p {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .about-intro {
+    flex-direction: column-reverse;
+  }
+
+  .about-intro-image {
+    width: 100%;
+    height: 280px;
+  }
+
+  .interests-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .interests-grid {
+    grid-template-columns: 1fr;
+  }
+}

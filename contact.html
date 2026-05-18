@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact — Your Name</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/contact.css" />
+  </head>
+  <body>
+    <div class="page-bucket">
+      <div id="navbar-placeholder"></div>
+
+      <main class="contact-wrapper">
+        <!-- HEADER -->
+        <section class="contact-header">
+          <p class="section-label">— Get In Touch</p>
+          <h1>Let's <span class="accent">Talk.</span></h1>
+          <p class="contact-sub">
+            Have a question, opportunity, or just want to say hi? Fill in the
+            form or reach out directly.
+          </p>
+        </section>
+
+        <!-- CONTENT -->
+        <section class="contact-content">
+          <!-- FORM -->
+          <div class="contact-form-wrapper">
+            <form class="contact-form" id="contact-form">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  placeholder="Your name"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="email">Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="your@email.com"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows="6"
+                  placeholder="Your message..."
+                  required
+                ></textarea>
+              </div>
+              <button type="submit" class="submit-btn">Send Message →</button>
+              <p class="form-status" id="form-status"></p>
+            </form>
+          </div>
+
+          <!-- DETAILS -->
+          <div class="contact-details">
+            <div class="contact-item">
+              <span class="contact-icon">✉</span>
+              <div>
+                <p class="contact-label">Email</p>
+                <a href="mailto:your@email.com">your@email.com</a>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <span class="contact-icon">📱</span>
+              <div>
+                <p class="contact-label">Phone</p>
+                <a href="tel:+0000000000">+000 000 0000</a>
+              </div>
+            </div>
+
+            <div class="contact-item">
+              <span class="contact-icon">📍</span>
+              <div>
+                <p class="contact-label">Location</p>
+                <p>Paramaribo, Suriname</p>
+              </div>
+            </div>
+
+            <!-- SOCIAL -->
+            <div class="contact-socials">
+              <p class="contact-label">Socials</p>
+              <div class="social-links">
+                <a href="https://github.com/" target="_blank">GitHub</a>
+                <a href="https://linkedin.com/" target="_blank">LinkedIn</a>
+                <a href="https://twitter.com/" target="_blank">Twitter</a>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="./js/navbar.js"></script>
+    <script src="./js/main.js"></script>
+    <script src="./js/contact.js"></script>
+  </body>
+</html>

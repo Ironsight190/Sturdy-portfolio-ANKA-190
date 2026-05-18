@@ -8,23 +8,39 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="./css/style.css" />
+    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/hero.css" />
     <title>ANKA's Portfolio</title>
   </head>
 
   <body>
     <div class="page-bucket">
-      <nav class="navbar">
-        <h1 class="big-title">TEST</h1>
-        <div class="nav-logo">YN.</div>
+      <!-- navbar -->
+      <div id="navbar-placeholder"></div>
+      ...
+      <script src="./js/navbar.js"></script>
 
-        <ul class="main-nav">
-          <li><a href="./index.html">Home</a></li>
-          <li><a href="./pages/about.html">About</a></li>
-          <li><a href="./pages/work.html">Work</a></li>
-          <li><a href="./pages/contact.html">Contact</a></li>
-        </ul>
-      </nav>
+      <!-- Hero section -->
+      <div>
+        <section class="hero">
+          <div class="hero-text">
+            <p class="hero-sub">— Introduction</p>
+            <h1 class="hero-title">Your Name<span class="accent">.</span></h1>
+            <h2 class="hero-role">
+              Developer & Designer,<br />based in Suriname.
+            </h2>
+            <p class="hero-desc">
+              Brief description of who you are, what you do, and what you're
+              passionate about.
+            </p>
+            <a href="./about.html" class="hero-cta">My story →</a>
+          </div>
+          <div class="hero-image">
+            <img src="./img/profile.png" alt="Your Name" />
+          </div>
+        </section>
+      </div>
     </div>
+    <script src="./js/main.js"></script>
   </body>
 </html>
