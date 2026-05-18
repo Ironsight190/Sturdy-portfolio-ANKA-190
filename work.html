@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Work — Your Name</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap"
@@ -21,7 +21,7 @@
         <!-- Header with Logout -->
         <header class="header">
           <div class="header-content">
-            <h1>Portfolio</h1>
+            <h1>Work</h1>
             <div class="header-actions">
               <span id="userRole" class="user-role">Guest</span>
               <button
@@ -109,51 +109,70 @@
             </div>
           </section>
 
-          <!-- Cards Section -->
+          <!-- Work Cards Section -->
           <section class="cards-section">
-            <div class="section-header">
-              <h2>Projects & Accomplishments</h2>
-              <button
-                id="addCardBtn"
-                class="btn btn-add"
-                onclick="showAddCardForm()"
-                style="display: none"
-              >
-                + Add Card
-              </button>
-            </div>
+            <p class="section-label">— Selected Work</p>
+            <h2>Featured Projects</h2>
 
-            <div id="cardsContainer" class="cards-container">
-              <!-- Cards will be rendered here -->
-            </div>
+            <div class="work-cards">
+              <article class="work-card">
+                <div class="work-card-image">
+                  <img src="./img/project-01.png" alt="Brand refresh preview" />
+                </div>
+                <div class="work-card-content">
+                  <span class="work-card-tag">Product Design</span>
+                  <h3>Brand refresh for YN Studio</h3>
+                  <p>
+                    Refined the visual system, created a polished landing page,
+                    and established a strong color contrast for a premium
+                    digital experience.
+                  </p>
+                  <div class="work-card-meta">
+                    <span>UI/UX</span>
+                    <span>Figma</span>
+                    <span>2025</span>
+                  </div>
+                </div>
+              </article>
 
-            <!-- Add/Edit Card Form -->
-            <div id="cardFormContainer" class="card-form" style="display: none">
-              <h3 id="cardFormTitle">Add New Card</h3>
-              <div class="form-group">
-                <label>Category (Project, Accomplishment, Training):</label>
-                <select id="cardCategory">
-                  <option value="Project">Project</option>
-                  <option value="Accomplishment">Accomplishment</option>
-                  <option value="Training">Training</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label>Title:</label>
-                <input type="text" id="cardTitle" />
-              </div>
-              <div class="form-group">
-                <label>Description:</label>
-                <textarea id="cardDescription" rows="3"></textarea>
-              </div>
-              <div class="form-buttons">
-                <button class="btn btn-primary" onclick="saveCard()">
-                  Save
-                </button>
-                <button class="btn btn-secondary" onclick="cancelCardForm()">
-                  Cancel
-                </button>
-              </div>
+              <article class="work-card">
+                <div class="work-card-image">
+                  <img src="./img/project-02.png" alt="Dashboard concept" />
+                </div>
+                <div class="work-card-content">
+                  <span class="work-card-tag">Web App</span>
+                  <h3>Dashboard concept for creators</h3>
+                  <p>
+                    Built a clean, dark-themed dashboard layout with clear
+                    hierarchy, quick actions, and responsive card modules.
+                  </p>
+                  <div class="work-card-meta">
+                    <span>Design System</span>
+                    <span>HTML/CSS</span>
+                    <span>2025</span>
+                  </div>
+                </div>
+              </article>
+
+              <article class="work-card">
+                <div class="work-card-image">
+                  <img src="./img/project-03.png" alt="Case study preview" />
+                </div>
+                <div class="work-card-content">
+                  <span class="work-card-tag">Portfolio</span>
+                  <h3>Interactive project showcase</h3>
+                  <p>
+                    Organized case studies into modular cards with strong visual
+                    balance and a flexible left-image / right-description
+                    layout.
+                  </p>
+                  <div class="work-card-meta">
+                    <span>Creative Direction</span>
+                    <span>Responsive Design</span>
+                    <span>2025</span>
+                  </div>
+                </div>
+              </article>
             </div>
           </section>
         </main>
