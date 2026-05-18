@@ -9,7 +9,7 @@
 }
 
 .hero-text {
-  max-width: 520px;
+  max-width: 1000px;
 }
 
 .hero-sub {
@@ -64,7 +64,7 @@
 /* HERO IMAGE */
 .hero-image {
   flex-shrink: 0;
-  width: 380px;
+  width: 500px;
   height: 480px;
   border-radius: 12px;
   overflow: hidden;
