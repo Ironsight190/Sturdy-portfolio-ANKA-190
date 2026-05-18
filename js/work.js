@@ -1,30 +1,52 @@
 const workCardsData = [
   {
-    image: './img/project-01.png',
-    alt: 'Brand refresh preview',
-    tag: 'Product Design',
-    title: 'Brand refresh for YN Studio',
+    image: './img/project-soilsentry.png',
+    alt: 'SoilSentry project preview',
+    tag: 'Hackathon Project',
+    title: 'SoilSentry',
     description:
-      'Refined the visual system, created a polished landing page, and established a strong color contrast for a premium digital experience.',
-    meta: ['UI/UX', 'Figma', '2025']
+      'Developed a concept for a smart soil analysis device capable of measuring soil contents and mapping results to a general location for monitoring and research purposes. Although the project never reached a functional prototype, it established the foundation for future development.',
+    meta: ['Hackomation 2024', 'IoT', 'Hardware Systems']
   },
+
   {
-    image: './img/project-02.png',
-    alt: 'Dashboard concept',
-    tag: 'Web App',
-    title: 'Dashboard concept for creators',
+    image: './img/project-shellguard.png',
+    alt: 'ShellGuard monitoring system',
+    tag: 'Environmental Technology',
+    title: 'ShellGuard',
     description:
-      'Built a clean, dark-themed dashboard layout with clear hierarchy, quick actions, and responsive card modules.',
-    meta: ['Design System', 'HTML/CSS', '2025']
+      'Designed an independent off-grid monitoring system focused on detecting intruders and anomalies around sea turtle habitats and protected beaches using smart camera technology and environmental monitoring concepts.',
+    meta: ['Hackomation 2025', 'Embedded Systems', 'Wildlife Tech']
   },
+
   {
-    image: './img/project-03.png',
-    alt: 'Case study preview',
-    tag: 'Portfolio',
-    title: 'Interactive project showcase',
+    image: './img/project-groundguard.png',
+    alt: 'GroundGuard prototype preview',
+    tag: 'Prototype Development',
+    title: 'GroundGuard',
     description:
-      'Organized case studies into modular cards with strong visual balance and a flexible left-image / right-description layout.',
-    meta: ['Creative Direction', 'Responsive Design', '2025']
+      'A continuation and improvement of the SoilSentry concept, developed into a working prototype and presented during the Advanced Prototyping Fair at UNASAT on March 24th, 2025. Focused on practical soil monitoring and hardware integration.',
+    meta: ['UNASAT 2026', 'Prototyping', 'Electronics']
+  },
+
+  {
+    image: './img/project-telesur-01.png',
+    alt: 'Telesur internship maintenance work',
+    tag: 'Internship',
+    title: 'Telecommunications Maintenance Internship',
+    description:
+      'Assisted with preventative and corrective maintenance of telecommunications equipment during internship activities at Telesur, gaining hands-on experience with infrastructure and technical systems.',
+    meta: ['Telesur', 'Telecommunications', '2024']
+  },
+
+  {
+    image: './img/big-profile.jpeg',
+    alt: 'Remote monitoring research project',
+    tag: 'Graduation Research',
+    title: 'Remote DTV Monitoring Research',
+    description:
+      'Conducted research on the status and possibilities of centrally monitoring DTV transmitters at the Telesur NOC using SNMP technologies and remote monitoring concepts.',
+    meta: ['SNMP', 'Network Monitoring', '2025']
   }
 ];
 
@@ -56,16 +78,6 @@ function renderWorkCards(cards, containerId = 'workCards') {
   container.innerHTML = '';
   cards.forEach(card => container.appendChild(createWorkCard(card)));
 }
-
-function addWorkCard(card) {
-  workCardsData.push(card);
-  renderWorkCards(workCardsData);
-}
-
-window.workCardsData = workCardsData;
-window.createWorkCard = createWorkCard;
-window.renderWorkCards = renderWorkCards;
-window.addWorkCard = addWorkCard;
 
 window.addEventListener('DOMContentLoaded', () => {
   renderWorkCards(workCardsData);
